@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import Header from '../../components/Header';
 import { ImageCard } from '../../components/Cards';
-import { PopularSection } from '../../components/PopularSection';
+import { PopularSection } from '../../components/Sections';
 
 import logo from '../../assets/img/Logo.png';
 import Default from '../../assets/img/default.jpg';
