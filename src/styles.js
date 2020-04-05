@@ -2,10 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const GlobalStyle = createGlobalStyle`
-  body{
+  body, #root{
     background-color: #eceff1;
     display: flex;
     flex-direction: column;
+    height: 100%;
     min-height: 100%;
   }
   html {
@@ -14,6 +15,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   footer {
-      margin-top: auto;
+    margin-top: auto;
   }
 `
