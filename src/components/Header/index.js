@@ -9,7 +9,7 @@ export default function Header({ logo, blogName, pages }) {
   return (
     <NavbarStyled variant="dark" expand="lg">
         <Container>
-            <Navbar.Brand as={Link} to="/" > <img src={logo} alt={blogName} height="40px"/> </Navbar.Brand>
+            <Navbar.Brand as={Link} to={process.env.PUBLIC_URL + '/'} > <img src={logo} alt={blogName} height="40px"/> </Navbar.Brand>
             <Navbar.Toggle aria-controls="headerNavbarText" />
             <Navbar.Collapse id="headerNavbarText">
               <Search mobile />

@@ -21,7 +21,7 @@ export function LatestPostsAside({ posts }){
                             <Card.Text>{post.description}</Card.Text>
                             </ListGroup.Item>
                         ))}
-                        <LatestPostsAsideButton to="/" className="btn btn-outline-primary mx-auto rounded-pill my-3">Ler Mais</LatestPostsAsideButton>
+                        <LatestPostsAsideButton to={process.env.PUBLIC_URL + '/'} className="btn btn-outline-primary mx-auto rounded-pill my-3">Ler Mais</LatestPostsAsideButton>
                     </ListGroup>
                 </Col>
             </Row>

@@ -17,7 +17,7 @@ export default function Routes() {
         temp.push({
           id: i,
           name: `Página ${i}`,
-          url: '/'
+          url: process.env.PUBLIC_URL + '/'
         });
       setHeaderPages(temp)
     }},[]);
@@ -28,17 +28,17 @@ export default function Routes() {
         {
           id: 1,
           name: `Últimas novidades`,
-          url: '/'
+          url: process.env.PUBLIC_URL + '/'
         },
         {
           id: 2,
           name: `Populares`,
-          url: '/'
+          url: process.env.PUBLIC_URL + '/'
         },
         {
           id: 3,
           name: `Contato`,
-          url: '/'
+          url: process.env.PUBLIC_URL + '/'
         }
       ];
       setFooterPages(temp);

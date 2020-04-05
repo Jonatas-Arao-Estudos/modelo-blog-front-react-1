@@ -21,7 +21,7 @@ export default function Inicio() {
         page: 'Página',
         title: 'Título da Matéria',
         imgSrc: Default,
-        url: '/'
+        url: process.env.PUBLIC_URL + '/'
       });
     }
     setIndexCardData(temp);
@@ -36,7 +36,7 @@ export default function Inicio() {
         page: 'Página',
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
-        url: '',
+        url: process.env.PUBLIC_URL + '/',
         imgSrc: Default
       });
     }
@@ -52,7 +52,7 @@ export default function Inicio() {
         page: 'Página',
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
-        url: '',
+        url: process.env.PUBLIC_URL + '/',
         imgSrc: Default
       });
     }
