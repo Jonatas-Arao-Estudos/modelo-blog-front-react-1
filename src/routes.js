@@ -48,7 +48,7 @@ export default function Routes() {
         <BrowserRouter>
             <Header logo={logo} blogName="Design Teste" pages={headerPages} />
             <Switch>
-                <Route path="/" exact component={Inicio} />
+                <Route path={process.env.PUBLIC_URL + '/'} exact component={Inicio} />
             </Switch>
             <FooterNav logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" pages={footerPages}/>
         </BrowserRouter>
