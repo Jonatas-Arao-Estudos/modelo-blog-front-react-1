@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/modelo-blog-front-react-1/static/js/main.a6824aa0.chunk.js",
-    "main.js.map": "/modelo-blog-front-react-1/static/js/main.a6824aa0.chunk.js.map",
+    "main.js": "/modelo-blog-front-react-1/static/js/main.f21ee2ba.chunk.js",
+    "main.js.map": "/modelo-blog-front-react-1/static/js/main.f21ee2ba.chunk.js.map",
     "runtime-main.js": "/modelo-blog-front-react-1/static/js/runtime-main.1b57bea9.js",
     "runtime-main.js.map": "/modelo-blog-front-react-1/static/js/runtime-main.1b57bea9.js.map",
     "static/css/2.de424728.chunk.css": "/modelo-blog-front-react-1/static/css/2.de424728.chunk.css",
     "static/js/2.cc87d369.chunk.js": "/modelo-blog-front-react-1/static/js/2.cc87d369.chunk.js",
     "static/js/2.cc87d369.chunk.js.map": "/modelo-blog-front-react-1/static/js/2.cc87d369.chunk.js.map",
     "index.html": "/modelo-blog-front-react-1/index.html",
-    "precache-manifest.110170a6784ff5d7a0226969ed1c8c4c.js": "/modelo-blog-front-react-1/precache-manifest.110170a6784ff5d7a0226969ed1c8c4c.js",
+    "precache-manifest.ab25bdb5c29d20ddfeef6d50104b5479.js": "/modelo-blog-front-react-1/precache-manifest.ab25bdb5c29d20ddfeef6d50104b5479.js",
     "service-worker.js": "/modelo-blog-front-react-1/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/modelo-blog-front-react-1/static/css/2.de424728.chunk.css.map",
     "static/js/2.cc87d369.chunk.js.LICENSE.txt": "/modelo-blog-front-react-1/static/js/2.cc87d369.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.1b57bea9.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.cc87d369.chunk.js",
-    "static/js/main.a6824aa0.chunk.js"
+    "static/js/main.f21ee2ba.chunk.js"
   ]
 }
