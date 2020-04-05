@@ -20,10 +20,10 @@ export default function Inicio() {
     </Col>)
   )};
 
-  let pages = []
+  let headerPages = []
 
   for(let i = 1; i <= 4; i++){
-    pages.push({
+    headerPages.push({
       id: i,
       name: `Página ${i}`,
       url: '/'
@@ -43,9 +43,27 @@ export default function Inicio() {
     });
   }
 
+  let footerPages = [
+    {
+      id: 1,
+      name: `Últimas novidades`,
+      url: '/'
+    },
+    {
+      id: 2,
+      name: `Populares`,
+      url: '/'
+    },
+    {
+      id: 3,
+      name: `Contato`,
+      url: '/'
+    }
+  ]
+
   return (
     <>
-    <Header logo={logo} blogName="Design Teste" pages={pages} />
+    <Header logo={logo} blogName="Design Teste" pages={headerPages} />
     
 
     <Container className="mt-3" as="section">
@@ -62,7 +80,7 @@ export default function Inicio() {
       </Row>
     </Container>
 
-    <Footer logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog"/>
+    <Footer logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" pages={footerPages}/>
     </>
   );
 }

@@ -10,13 +10,13 @@ export default function Header({ logo, blogName, pages }) {
     <NavbarStyled variant="dark" expand="lg">
         <Container>
             <Navbar.Brand as={Link} to="/" > <img src={logo} alt={blogName} height="40px"/> </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarText" />
-            <Navbar.Collapse id="navbarText">
+            <Navbar.Toggle aria-controls="headerNavbarText" />
+            <Navbar.Collapse id="headerNavbarText">
               <Search mobile />
               <Nav as="ul" className="ml-auto px-3">
                 {pages.map(page => (
-                  <li  key={page.id}>
-                    <NavLinkStyled as={Link} to={page.url} className="px-3 py-2">{page.name}</NavLinkStyled>
+                  <li key={page.id} className="px-3 py-2">
+                    <NavLinkStyled as={Link} to={page.url} className="py-2">{page.name}</NavLinkStyled>
                   </li>
                 ))}
               </Nav>
