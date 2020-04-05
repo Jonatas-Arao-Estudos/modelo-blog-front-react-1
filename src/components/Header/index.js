@@ -15,8 +15,8 @@ export default function Header({ logo, blogName, pages }) {
               <Search mobile />
               <Nav as="ul" className="ml-auto px-3">
                 {pages.map(page => (
-                  <li>
-                    <NavLinkStyled as={Link} to={page.url} key={page.id} className="px-3 py-2">{page.name}</NavLinkStyled>
+                  <li  key={page.id}>
+                    <NavLinkStyled as={Link} to={page.url} className="px-3 py-2">{page.name}</NavLinkStyled>
                   </li>
                 ))}
               </Nav>

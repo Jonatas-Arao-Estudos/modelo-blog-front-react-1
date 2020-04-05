@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../../components/Header';
 import { ImageCard } from '../../components/Cards';
 import { PopularSection } from '../../components/Sections';
+import Footer from '../../components/Footer';
 
 import logo from '../../assets/img/Logo.png';
 import Default from '../../assets/img/default.jpg';
@@ -33,6 +34,7 @@ export default function Inicio() {
 
   for(let i = 0; i <=4; i++){
     posts.push({
+      id: i,
       page: 'Página',
       title: 'Título da Matéria',
       description: 'Descrição da Matéria',
@@ -59,6 +61,8 @@ export default function Inicio() {
         </Col>
       </Row>
     </Container>
+
+    <Footer logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog"/>
     </>
   );
 }
