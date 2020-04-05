@@ -2,7 +2,7 @@ import {  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const PopularSectionTitle = styled(Link)`
+export const PopularPostsSectionTitle = styled(Link)`
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: bolder;
