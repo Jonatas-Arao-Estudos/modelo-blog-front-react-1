@@ -14,9 +14,9 @@ export default function Header({ logo, blogName, pages }) {
             <Navbar.Collapse id="headerNavbarText">
               <Search mobile />
               <Nav as="ul" className="ml-auto px-3">
-                {pages.map(page => (
-                  <li key={page.id} className="px-3 py-2">
-                    <NavLinkStyled as={Link} to={page.url} className="py-2">{page.name}</NavLinkStyled>
+                {pages.map(({id, url, name}) => (
+                  <li key={id} className="px-3 py-2">
+                    <NavLinkStyled as={Link} to={url} className="py-2">{name}</NavLinkStyled>
                   </li>
                 ))}
               </Nav>

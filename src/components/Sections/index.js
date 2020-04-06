@@ -7,8 +7,8 @@ export function PopularPostsSection({ posts }) {
   return (
     <>
         <PopularPostsSectionTitle to="s">Populares</PopularPostsSectionTitle>
-        {posts.map(post => (
-            <HorizontalCard key={post.id} to={post.url} imgSrc={post.imgSrc} page={post.page} title={post.title} description={post.description} />
+        {posts.map(({id, url, imgSrc, page, title, description}) => (
+            <HorizontalCard key={id} to={url} imgSrc={imgSrc} page={page} title={title} description={description} />
         ))}
     </>
   );

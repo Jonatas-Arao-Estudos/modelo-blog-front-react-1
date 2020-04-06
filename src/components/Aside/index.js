@@ -14,11 +14,11 @@ export function LatestPostsAside({ posts }){
             <Row>
                 <Col xs={11} className="mx-auto">
                     <ListGroup variant="flush">
-                        {posts.map(post => (
-                            <ListGroup.Item key={post.id} className="px-0">
-                            <Link to={post.url} className="stretched-link"></Link>
-                            <Card.Title>{post.title}</Card.Title>
-                            <Card.Text>{post.description}</Card.Text>
+                        {posts.map(({id, url, title, description}) => (
+                            <ListGroup.Item key={id} className="px-0">
+                            <Link to={url} className="stretched-link"></Link>
+                            <Card.Title>{title}</Card.Title>
+                            <Card.Text>{description}</Card.Text>
                             </ListGroup.Item>
                         ))}
                         <LatestPostsAsideButton to={process.env.PUBLIC_URL + '/'} className="btn btn-outline-primary mx-auto rounded-pill my-3">Ler Mais</LatestPostsAsideButton>

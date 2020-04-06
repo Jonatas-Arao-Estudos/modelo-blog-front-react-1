@@ -19,8 +19,8 @@ export function FooterNav({ pages }){
             <NavbarStyled className="d-lg-none" expand="lg" variant="dark">
                 <MobileFooterCollapse id="footerNavbar">
                     <ListGroup variant="flush" className="p-4">
-                        {pages.map(page => (
-                            <ListGroup.Item key={page.id} as={Link} className="bg-transparent text-white text-center px-3" to={page.url}>{page.name}</ListGroup.Item>
+                        {pages.map(({id, url, name}) => (
+                            <ListGroup.Item key={id} as={Link} className="bg-transparent text-white text-center px-3" to={url}>{name}</ListGroup.Item>
                         ))}
                     </ListGroup>
                 </MobileFooterCollapse>
@@ -32,8 +32,8 @@ export function FooterNav({ pages }){
             <NavbarStyled expand="lg" variant="dark" className="d-none d-lg-block">
                 <Container>
                     <Nav as="ul">
-                        {pages.map(page => (
-                            <Nav.Link key={page.id} as={Link} className="px-3" to={page.url} active>{page.name}</Nav.Link>
+                        {pages.map(({id, url, name}) => (
+                            <Nav.Link key={id} as={Link} className="px-3" to={url} active>{name}</Nav.Link>
                         ))}
                     </Nav>
                     <Nav as="ul">
