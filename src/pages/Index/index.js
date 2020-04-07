@@ -10,9 +10,9 @@ import { FooterDescriptionElement } from '../../components/Footer';
 import Default from '../../assets/img/default.jpg';
 import logo from '../../assets/img/Logo.png';
 
-export default function Inicio() {
+export default function Index() {
 
-  const [IndexCardData, setIndexCardData] = useState([]);
+  const [IndexCard, setIndexCard] = useState([]);
   useEffect(() => {
     let temp = [];
     for(let i = 1; i <= 6; i++){
@@ -24,7 +24,7 @@ export default function Inicio() {
         url: process.env.PUBLIC_URL + '/'
       });
     }
-    setIndexCardData(temp);
+    setIndexCard(temp);
   },[]);
 
   const [popularPosts, setPopularPosts] = useState([])
@@ -63,7 +63,11 @@ export default function Inicio() {
     <>
     <Container className="mt-3" as="section">
       <Row>
-        <IndexCards />
+        {IndexCard.map(({id, page, title, imgSrc, url}) =>
+          (<Col key={id} lg={4} md={6} xs={12} className="mt-3">
+            <ImageCard to={url} imgSrc={imgSrc} page={page} title={title}/>
+          </Col>
+        ))}
       </Row>
     </Container>
 
@@ -81,11 +85,4 @@ export default function Inicio() {
     <FooterDescriptionElement logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" />
     </>
   );
-
-  function IndexCards(){
-    return IndexCardData.map(({id, page, title, imgSrc, url}) =>
-    (<Col key={id} lg={4} md={6} xs={12} className="mt-3">
-      <ImageCard to={url} imgSrc={imgSrc} page={page} title={title}/>
-    </Col>)
-  )};
 }

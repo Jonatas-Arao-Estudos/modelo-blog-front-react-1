@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Inicio from './pages/Inicio';
+import Index from './pages/Index'
+import Page from './pages/Page';
 
 import Header from './components/Header';
 import { FooterNav } from './components/Footer';
@@ -17,7 +18,7 @@ export default function Routes() {
         temp.push({
           id: i,
           name: `Página ${i}`,
-          url: process.env.PUBLIC_URL + '/'
+          url: `${process.env.PUBLIC_URL}/p/${i}`
         });
       setHeaderPages(temp)
     }},[]);
@@ -48,7 +49,8 @@ export default function Routes() {
         <BrowserRouter>
             <Header logo={logo} blogName="Design Teste" pages={headerPages} />
             <Switch>
-                <Route path={process.env.PUBLIC_URL + '/'} exact component={Inicio} />
+                <Route path={process.env.PUBLIC_URL + '/'} exact component={Index} />
+                <Route path={process.env.PUBLIC_URL + '/p/:id/:page?'} component={Page} />
             </Switch>
             <FooterNav logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" pages={footerPages}/>
         </BrowserRouter>

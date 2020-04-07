@@ -8,7 +8,7 @@ export function LatestPostsAside({ posts }){
     return (
         <LatestPostsAsideCard>
             <Card.Header>
-                <Link>Últimos</Link>
+                <Link to={process.env.PUBLIC_URL + '/'}>Últimos</Link>
             </Card.Header>
             <Card.Body>
             <Row>
