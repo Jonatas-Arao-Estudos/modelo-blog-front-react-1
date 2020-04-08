@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f817cbf97a85f466a6fce0eb1c0808c",
+    "revision": "0057ddef63c5d5e600e265e5b69cc884",
     "url": "/modelo-blog-front-react-1/index.html"
   },
   {
-    "revision": "f6d0e454349ccc78a292",
+    "revision": "1b2d587ce07b732f8734",
     "url": "/modelo-blog-front-react-1/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "f6d0e454349ccc78a292",
-    "url": "/modelo-blog-front-react-1/static/js/2.cc87d369.chunk.js"
+    "revision": "1b2d587ce07b732f8734",
+    "url": "/modelo-blog-front-react-1/static/js/2.08d1bd56.chunk.js"
   },
   {
     "revision": "56729d980da09961afe8d497a21eec12",
-    "url": "/modelo-blog-front-react-1/static/js/2.cc87d369.chunk.js.LICENSE.txt"
+    "url": "/modelo-blog-front-react-1/static/js/2.08d1bd56.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "49560efd7fcd605bb34d",
-    "url": "/modelo-blog-front-react-1/static/js/main.f21ee2ba.chunk.js"
+    "revision": "8769402a4d6259cb27e8",
+    "url": "/modelo-blog-front-react-1/static/js/main.5a850459.chunk.js"
   },
   {
     "revision": "1efc65fed3beb4149e7b",
