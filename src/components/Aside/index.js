@@ -2,13 +2,16 @@ import React from 'react';
 import { Card, ListGroup, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import { LatestPostsAsideButton, LatestPostsAsideCard } from './styles';
+import { TransparentCard } from '../Cards';
+import { LatestPostsTitle, PopularPostsTitle } from '../Titles';
+
+import { LatestPostsAsideButton, PopularPostsAsideCard, LatestPostsAsideCard } from './styles';
 
 export function LatestPostsAside({ posts }){
     return (
         <LatestPostsAsideCard>
             <Card.Header>
-                <Link to={process.env.PUBLIC_URL + '/'}>Últimos</Link>
+                <LatestPostsTitle to={process.env.PUBLIC_URL + '/'}>Últimos</LatestPostsTitle>
             </Card.Header>
             <Card.Body>
             <Row>
@@ -27,5 +30,16 @@ export function LatestPostsAside({ posts }){
             </Row>
             </Card.Body>
         </LatestPostsAsideCard>
+    )
+}
+
+export function PopularPostsAside({ posts }){
+    return (
+        <>
+        <PopularPostsTitle to={process.env.PUBLIC_URL + '/'}>Populares</PopularPostsTitle>
+        {posts.map(({id, url, imgSrc, page, title, description}) => (
+            <TransparentCard key={id} to={url} imgSrc={imgSrc} title={title} />
+        ))}
+        </>
     )
 }

@@ -6,6 +6,9 @@ import { replaceSpecialChars } from '../../functions';
 
 import { PageTitle } from '../../components/Titles';
 import { ImageCard } from '../../components/Cards';
+import { LatestPostsSection } from '../../components/Sections';
+import { PopularPostsAside } from '../../components/Aside';
+import { PaginationStyled } from '../../components/Pagination';
 
 import Default from '../../assets/img/default.jpg';
 
@@ -39,7 +42,7 @@ export default function Page() {
     const [popularPosts, setPopularPosts] = useState([])
     useEffect(() => {
         let temp = []
-        for(let i = 0; i <=4; i++){
+        for(let i = 0; i <=6; i++){
         temp.push({
             id: i,
             page: titlePage,
@@ -70,7 +73,7 @@ export default function Page() {
 
     return(
         <>
-        <Container className="mt-3">
+        <Container className="mt-3" as="section">
             <PageTitle>{titlePage}</PageTitle>
             <Row>
             {pageCard.map(({id, page, title, imgSrc, url}) =>
@@ -78,6 +81,27 @@ export default function Page() {
                 <ImageCard to={url} imgSrc={imgSrc} title={title}/>
                 </Col>)
             )}
+            </Row>
+        </Container>
+        <Container className="my-5" as="section">
+            <Row>
+                <Col lg={8} xs={12} as="section">
+                    <LatestPostsSection posts={latestPosts}/>
+                    <Row> 
+                        <PaginationStyled className="mx-auto mt-3">
+                            <PaginationStyled.Prev disabled>Anterior </PaginationStyled.Prev>
+                            <PaginationStyled.Item>{1}</PaginationStyled.Item>
+
+                            <PaginationStyled.Item>{2}</PaginationStyled.Item>
+                            <PaginationStyled.Item>{3}</PaginationStyled.Item>
+
+                            <PaginationStyled.Next>Próximo > </PaginationStyled.Next>
+                        </PaginationStyled>
+                    </Row>
+                </Col>
+                <Col lg={4} xs={12} as="aside">
+                    <PopularPostsAside posts={popularPosts}/>
+                </Col>
             </Row>
         </Container>
         </>

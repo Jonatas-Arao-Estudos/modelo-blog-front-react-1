@@ -19,19 +19,11 @@ export const LatestPostsAsideCard = styled(Card)`
         background-color: white;
         border: none;
     }
-    & .card-header a{
-        transition: all .3s ease-in-out;
-        background-color: white;
-        color:  #546e7a;
-        text-decoration: underline;
-        text-transform: uppercase;
-        font-weight: bolder;
-        font-size: 1.5rem;
-    }
-    & .card-header a:hover{
-        color:  #424242;
-    }
     & .card-body{
         padding: 0 0.3rem;
     }
+`
+
+export const PopularPostsAsideCard = styled(Card)`
+    
 `
