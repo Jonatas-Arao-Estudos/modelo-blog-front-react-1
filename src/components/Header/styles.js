@@ -28,7 +28,7 @@ export const SearchStyled = styled(Form)`
   .search-itens::placeholder {
     color: white;
   }
-  .search-itens:focus::placeholder{
+  .search-itens:focus::placeholder, .search-itens:focus{
     color: grey;
   }
 `;

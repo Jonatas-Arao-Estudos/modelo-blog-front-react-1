@@ -33,6 +33,7 @@ export const LatestPostsTitle = styled(Link)`
     text-decoration: underline;
     font-weight: bolder;
     font-size: 1.5rem;
+    line-height: 1.2;
 
     &:hover{
         color:  #424242;

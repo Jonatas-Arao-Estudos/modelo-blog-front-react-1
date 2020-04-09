@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Index from './pages/Index';
 import Page from './pages/Page';
 import Author from './pages/Author';
+import Search from './pages/Search';
 import PopularLatestPosts from './pages/PopularLatestPosts';
 import Contact from './pages/Contact';
 
@@ -55,6 +56,7 @@ export default function Routes() {
                 <Route path={process.env.PUBLIC_URL + '/'} exact component={Index} />
                 <Route path={process.env.PUBLIC_URL + '/p/:id/:page?'} component={Page} />
                 <Route path={process.env.PUBLIC_URL + '/a/:id/:author?'} component={Author} />
+                <Route path={process.env.PUBLIC_URL + '/s/:query'} component={Search} />
                 <Route path={process.env.PUBLIC_URL + '/popularposts'} component={PopularLatestPosts} />
                 <Route path={process.env.PUBLIC_URL + '/latestposts'} component={PopularLatestPosts} />
                 <Route path={process.env.PUBLIC_URL + '/contact'} component={Contact} />

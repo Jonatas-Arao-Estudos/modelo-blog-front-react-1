@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Navbar, Nav, InputGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa'
 
 import { NavbarStyled, NavLinkStyled, SearchStyled, FormControlSearch } from './styles';
@@ -27,9 +27,20 @@ export default function Header({ logo, blogName, pages }) {
   );
   
   function Search({ desktop , mobile }){
+    const history = useHistory();
+
+    const [query, setQuery] = useState();
+
+    function Submit(e){
+        if(query !== ''){
+          history.push(`${process.env.PUBLIC_URL}/s/${query}`);
+        }
+        e.preventDefault();
+    }
+
     if (mobile){
       return(
-        <SearchStyled inline className="px-1 d-lg-none d-inline">
+        <SearchStyled onSubmit={Submit} inline className="px-1 d-lg-none d-inline">
           <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text className="search-itens rounded-0 border-right-0">
@@ -41,6 +52,8 @@ export default function Header({ logo, blogName, pages }) {
               type="search"
               placeholder="BUSCAR"
               aria-label="BUSCAR"
+              value={query}
+              onChange={q => setQuery(q.target.value)}
             />
           </InputGroup>
         </SearchStyled>
@@ -48,7 +61,7 @@ export default function Header({ logo, blogName, pages }) {
     }
     if(desktop){
       return(
-        <SearchStyled inline className="px-1 d-none d-lg-block">
+        <SearchStyled onSubmit={Submit} inline className="px-1 d-none d-lg-block">
           <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text className="search-itens rounded-0 border-right-0">
@@ -60,6 +73,8 @@ export default function Header({ logo, blogName, pages }) {
               type="search"
               placeholder="BUSCAR"
               aria-label="BUSCAR"
+              value={query}
+              onChange={q => setQuery(q.target.value)}
             />
           </InputGroup>
         </SearchStyled>
