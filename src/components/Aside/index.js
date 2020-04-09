@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import { TransparentCard } from '../Cards';
 import { LatestPostsTitle, PopularPostsTitle } from '../Titles';
 
-import { LatestPostsAsideButton, PopularPostsAsideCard, LatestPostsAsideCard } from './styles';
+import { LatestPostsAsideButton, LatestPostsAsideCard } from './styles';
 
 export function LatestPostsAside({ posts }){
     return (
         <LatestPostsAsideCard>
             <Card.Header>
-                <LatestPostsTitle to={process.env.PUBLIC_URL + '/'}>Últimos</LatestPostsTitle>
+                <LatestPostsTitle to={process.env.PUBLIC_URL + '/latestposts'}>Últimos</LatestPostsTitle>
             </Card.Header>
             <Card.Body>
             <Row>
@@ -36,7 +36,7 @@ export function LatestPostsAside({ posts }){
 export function PopularPostsAside({ posts }){
     return (
         <>
-        <PopularPostsTitle to={process.env.PUBLIC_URL + '/'}>Populares</PopularPostsTitle>
+        <PopularPostsTitle to={process.env.PUBLIC_URL + '/popularposts'}>Populares</PopularPostsTitle>
         {posts.map(({id, url, imgSrc, page, title, description}) => (
             <TransparentCard key={id} to={url} imgSrc={imgSrc} title={title} />
         ))}

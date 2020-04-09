@@ -23,7 +23,3 @@ export const LatestPostsAsideCard = styled(Card)`
         padding: 0 0.3rem;
     }
 `
-
-export const PopularPostsAsideCard = styled(Card)`
-    
-`

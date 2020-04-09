@@ -18,7 +18,7 @@ export default function Index() {
     for(let i = 1; i <= 6; i++){
       temp.push({
         id: i,
-        page: 'Página',
+        page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         imgSrc: Default,
         url: process.env.PUBLIC_URL + '/'
@@ -33,7 +33,7 @@ export default function Index() {
     for(let i = 0; i <=4; i++){
       temp.push({
         id: i,
-        page: 'Página',
+        page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
         url: process.env.PUBLIC_URL + '/',
@@ -49,7 +49,7 @@ export default function Index() {
     for(let i = 0; i <=6; i++){
       temp.push({
         id: i,
-        page: 'Página',
+        page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
         url: process.env.PUBLIC_URL + '/',

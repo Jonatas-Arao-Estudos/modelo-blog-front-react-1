@@ -3,7 +3,7 @@ import { Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { PageTitleStyled, LatestPostsTitleStyled, PopularPostsTitleStyled } from './styles';
+import { PageTitleStyled } from './styles';
 
 export function PageTitle({ children }){
     return (
