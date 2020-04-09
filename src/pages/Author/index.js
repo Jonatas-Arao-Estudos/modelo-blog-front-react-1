@@ -4,51 +4,36 @@ import { useParams, useHistory } from 'react-router-dom';
 
 import { replaceSpecialChars } from '../../functions';
 
-import { PageTitle } from '../../components/Titles';
-import { ImageCard } from '../../components/Cards';
-import { LatestPostsSection } from '../../components/Sections';
-import { PopularPostsAside } from '../../components/Aside';
+import { PopularPostsSection } from '../../components/Sections';
+import { LatestPostsTransparentAside } from '../../components/Aside';
 import { PaginationStyled } from '../../components/Pagination';
 
 import Default from '../../assets/img/default.jpg';
+import UserDefault from '../../assets/img/user.png';
 
-export default function Page() {
+export default function Author() {
     const history = useHistory();
-    const { id, page } = useParams();
+    const { id , author } = useParams();
     if(isNaN(parseInt(id))){
         history.push(`${process.env.PUBLIC_URL}/`);
     }
-    const titlePage = 'Página ' + id;
-    const actualPage = replaceSpecialChars(titlePage).toLowerCase();
+    const authorName = 'Nome do Autor';
+    const authorDescription = 'Descrição do Autor';
+    const actualPage = replaceSpecialChars(authorName).toLowerCase();
     
     useEffect(() => {
-        if(page === undefined || page !== actualPage) {
-            history.push(`${process.env.PUBLIC_URL}/p/${id}/${actualPage}`)
+        if(author === undefined || author !== actualPage) {
+            history.push(`${process.env.PUBLIC_URL}/a/${id}/${actualPage}`);
         }
-    },[id, page, actualPage, history]);
-
-    const [pageCard, setPageCard] = useState([]);
-    useEffect(() => {
-        let temp = [];
-        for(let i = 1; i <= 6; i++){
-        temp.push({
-            id: i,
-            page: titlePage,
-            title: 'Título da Matéria',
-            imgSrc: Default,
-            url: process.env.PUBLIC_URL + '/'
-        });
-        }
-        setPageCard(temp);
-    },[titlePage]);
+    },[id, author, actualPage, history]);
 
     const [popularPosts, setPopularPosts] = useState([])
     useEffect(() => {
         let temp = []
-        for(let i = 0; i <=6; i++){
+        for(let i = 0; i <=4; i++){
         temp.push({
             id: i,
-            page: titlePage,
+            page: `Página ${(i%4) + 1}`,
             title: 'Título da Matéria',
             description: 'Descrição da Matéria',
             url: process.env.PUBLIC_URL + '/',
@@ -56,7 +41,7 @@ export default function Page() {
         });
         }
         setPopularPosts(temp);
-    },[titlePage]);
+    },[]);
 
     const [latestPosts, setLatestPosts] = useState([])
     useEffect(() => {
@@ -64,7 +49,7 @@ export default function Page() {
         for(let i = 0; i <=6; i++){
         temp.push({
             id: i,
-            page: titlePage,
+            page: `Página ${(i%4) + 1}`,
             title: 'Título da Matéria',
             description: 'Descrição da Matéria',
             url: process.env.PUBLIC_URL + '/',
@@ -72,24 +57,21 @@ export default function Page() {
         });
         }
         setLatestPosts(temp);
-    },[titlePage]);
+    },[]);
 
-    return(
-        <>
-        <Container className="mt-3" as="section">
-            <PageTitle>{titlePage}</PageTitle>
-            <Row>
-            {pageCard.map(({id, page, title, imgSrc, url}) =>
-                (<Col key={id} lg={4} md={6} xs={12} className="mt-3">
-                <ImageCard to={url} imgSrc={imgSrc} title={title}/>
-                </Col>)
-            )}
-            </Row>
-        </Container>
+    return (
         <Container className="my-5" as="section">
             <Row>
                 <Col lg={8} xs={12} as="section">
-                    <LatestPostsSection posts={latestPosts}/>
+                <div className="bg-white shadow p-4 mb-4">
+                    <div className="pt-2 pb-4">
+                        <img src={UserDefault} className="rounded-circle border border-dark" width="100rem" alt={authorName}/>
+                        <h1 className="d-inline text-dark align-middle pl-3">{authorName}</h1>
+                    </div>
+                    <p>{authorDescription}</p>
+                </div>
+
+                    <PopularPostsSection posts={popularPosts}/>
                     <Row> 
                         <PaginationStyled className="mx-auto mt-3">
                             <PaginationStyled.Prev disabled>Anterior </PaginationStyled.Prev>
@@ -103,10 +85,9 @@ export default function Page() {
                     </Row>
                 </Col>
                 <Col lg={4} xs={12} as="aside">
-                    <PopularPostsAside posts={popularPosts}/>
+                    <LatestPostsTransparentAside posts={latestPosts}/>
                 </Col>
             </Row>
         </Container>
-        </>
     )
 }

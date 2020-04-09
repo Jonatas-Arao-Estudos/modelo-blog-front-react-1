@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Index from './pages/Index';
 import Page from './pages/Page';
+import Author from './pages/Author';
 import PopularLatestPosts from './pages/PopularLatestPosts';
+import Contact from './pages/Contact';
 
 import Header from './components/Header';
 import { FooterNav } from './components/Footer';
@@ -40,7 +42,7 @@ export default function Routes() {
         {
           id: 3,
           name: `Contato`,
-          url: process.env.PUBLIC_URL + '/'
+          url: process.env.PUBLIC_URL + '/contact'
         }
       ];
       setFooterPages(temp);
@@ -52,8 +54,10 @@ export default function Routes() {
             <Switch>
                 <Route path={process.env.PUBLIC_URL + '/'} exact component={Index} />
                 <Route path={process.env.PUBLIC_URL + '/p/:id/:page?'} component={Page} />
+                <Route path={process.env.PUBLIC_URL + '/a/:id/:author?'} component={Author} />
                 <Route path={process.env.PUBLIC_URL + '/popularposts'} component={PopularLatestPosts} />
                 <Route path={process.env.PUBLIC_URL + '/latestposts'} component={PopularLatestPosts} />
+                <Route path={process.env.PUBLIC_URL + '/contact'} component={Contact} />
             </Switch>
             <FooterNav logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" pages={footerPages}/>
         </BrowserRouter>

@@ -8,7 +8,7 @@ import { PaginationStyled } from '../../components/Pagination';
 
 import Default from '../../assets/img/default.jpg';
 
-export default function Page() {
+export default function PopularLatestPosts() {
     const { pathname } = useLocation();
 
     const [titlePage, setTitlePage] = useState('');

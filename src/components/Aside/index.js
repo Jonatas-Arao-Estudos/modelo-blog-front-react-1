@@ -43,3 +43,14 @@ export function PopularPostsAside({ posts }){
         </>
     )
 }
+
+export function LatestPostsTransparentAside({ posts }){
+    return (
+        <>
+        <LatestPostsTitle to={process.env.PUBLIC_URL + '/latestposts'}>Últimos</LatestPostsTitle>
+        {posts.map(({id, url, imgSrc, page, title, description}) => (
+            <TransparentCard key={id} to={url} imgSrc={imgSrc} title={title} />
+        ))}
+        </>
+    )
+}
